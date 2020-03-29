@@ -1,0 +1,3 @@
+(:Following query selects all equipment in the kitchen with condition='bad':)
+
+//kitchen//equipment[not(@condition='good') and not(@condition='average')]

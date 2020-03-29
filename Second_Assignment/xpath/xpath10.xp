@@ -1,0 +1,3 @@
+(:Query selects all employees in the Bar:)
+
+//bar//employees[employee]

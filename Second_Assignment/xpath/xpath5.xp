@@ -1,0 +1,3 @@
+(:Following query will count all tables with capacity grater than 2 and less than 6:)
+
+count(//table[occupancy > 2 and occupancy < 6])

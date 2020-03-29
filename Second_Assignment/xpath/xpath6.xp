@@ -1,0 +1,3 @@
+(:Following query selects attributes shiftRef for Shifts which are responsible for Warehouse Bar:)
+
+//bar/warehouse/responsible-person//shift-reference/attribute::shiftRef

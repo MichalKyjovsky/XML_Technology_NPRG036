@@ -1,0 +1,3 @@
+(:XPath finds all current employees:)
+
+//employee[@employed='yes']

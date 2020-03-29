@@ -1,0 +1,3 @@
+(:Following query will SELECT all tableId attribute from table element:)
+
+//guest-area/tables/descendant::node()//attribute::tableId

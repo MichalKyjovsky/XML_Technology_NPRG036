@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT restaurant (kitchen,pizza-corner,bar,guest-area)>
+<!ENTITY boss "Gordon Ramsey">
+<!ELEMENT kitchen (warehouses,shifts,list-of-equipment)>
+<!ELEMENT shifts (shift)+>
+<!ELEMENT warehouses (warehouse,warehouse*)>
+<!ELEMENT warehouse (name?,responsible-person+,sanitary-day,missing-items*,actualization-date)>
+<!ELEMENT actualization-date (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT responsible-person (name,position,shift-reference)>
+<!ELEMENT sanitary-day (#PCDATA)>
+<!ELEMENT missing-items (item)+>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT position (#PCDATA |chief | waiter | cook |owner)*>
+<!ELEMENT shift (id,employees)>
+<!ATTLIST shift shiftID ID #REQUIRED>
+<!ELEMENT employees (employee,employee,employee,employee*)>
+<!ELEMENT employee (name,position,shift?,employment-type)>
+<!ATTLIST employee employed CDATA #FIXED "yes">
+<!ELEMENT employment-type (part-time-worker|full-time-worker)>
+<!ELEMENT chief EMPTY>
+<!ELEMENT owner EMPTY>
+<!ELEMENT waiter EMPTY>
+<!ELEMENT part-time-worker EMPTY>
+<!ELEMENT full-time-worker EMPTY>
+<!ELEMENT cook EMPTY>
+<!ELEMENT list-of-equipment (equipment)+>
+<!ELEMENT equipment (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT shift-reference EMPTY>
+<!ATTLIST shift-reference shiftRef IDREF #REQUIRED >
+<!ATTLIST equipment id ID #IMPLIED
+					condition (good|average|bad) "good">
+
+
+<!ELEMENT pizza-corner (warehouses,responsible-person,list-of-equipment)>
+
+
+<!ELEMENT bar (shifts,warehouse,responsible-person, list-of-equipment)>
+
+
+
+<!ELEMENT guest-area (#PCDATA | tables)*>
+<!ELEMENT tables (table,table,table,table,table,table,table,table,table,table)+ >
+<!ELEMENT table (capacity, occupancy,status?)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT occupancy (#PCDATA)>
+<!ATTLIST table tableId ID #REQUIRED
+				actionRequired (yes|no) "no">
+
+

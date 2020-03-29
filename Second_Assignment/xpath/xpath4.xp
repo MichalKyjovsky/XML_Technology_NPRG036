@@ -1,0 +1,4 @@
+(:Following expression will query attribute of second "Shift" in the kitchen:)
+
+//kitchen//shift[position()=2]//attribute::shiftID
+

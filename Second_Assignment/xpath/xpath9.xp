@@ -1,0 +1,3 @@
+(:Following query verify whether Jamie Oliver is still employed:)
+
+count(//employee[name='Jamie Oliver' and @employed='yes']) > 0

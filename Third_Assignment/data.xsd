@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="restaurant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kitchen" type="TKitchen" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="pizza-corner" type="TPizza-corner" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="bar" type="TBar" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="guest-area" type="TGuest-area" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="KKShift">
+			<xs:selector xpath="kitchen/shifts/shift"/>
+			<xs:field xpath="@shiftID"/>
+		</xs:key>
+		<xs:keyref name="RKKShift" refer="KKShift">
+			<xs:selector xpath="kitchen/warehouses/warehouse/responsible-person/shift-reference"></xs:selector>
+			<xs:field xpath="@shiftRef"></xs:field>
+		</xs:keyref>
+		<xs:keyref name="RKPShift" refer="KKShift">
+			<xs:selector xpath="pizza-corner/warehouses/warehouse/responsible-person/shift-reference"></xs:selector>
+			<xs:field xpath="@shiftRef"></xs:field>
+		</xs:keyref>
+		<xs:keyref name="RKBShift" refer="KKShift">
+			<xs:selector xpath="bar/warehouses/warehouse/responsible-person/shift-reference"></xs:selector>
+			<xs:field xpath="@shiftRef"></xs:field>
+		</xs:keyref>
+	</xs:element>
+	<xs:complexType name="TKitchen">
+		<xs:sequence>
+			<xs:element name="warehouses" type="TWarehouses" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="shifts" type="TShifts" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="list-of-equipment" type="TList-of-equipment" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TWarehouses">
+		<xs:choice>
+			<xs:element name="warehouse" type="TWarehouse" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="TWarehouse">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="responsible-person" type="TResponsible-person" minOccurs="1" maxOccurs="2"/>
+			<xs:element name="sanitary-day" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="actualization-date" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TResponsible-person">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="position" minOccurs="1" maxOccurs="1">
+				<xs:complexType mixed="true">
+					<xs:choice>
+						<xs:element name="chief"/>
+						<xs:element name="cook"/>
+						<xs:element name="owner"/>
+						<xs:element name="waiter"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="shift-reference" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:attribute name="shiftRef" type="xs:IDREF" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TShifts">
+		<xs:sequence>
+			<xs:element name="shift" type="TShift" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="shift" type="TShift"/>
+	<xs:complexType name="TShift">
+		<xs:sequence>
+			<xs:element name="id" type="xs:normalizedString"/>
+			<xs:element name="employees" type="TEmployees" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="shiftID" type="TShiftID"/>
+	</xs:complexType>
+	<xs:simpleType name="TShiftID">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="[A-z]{1,15}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TEmployees">
+		<xs:sequence>
+			<xs:element name="employee" type="TEmployee" minOccurs="1" maxOccurs="6"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TEmployee">
+		<xs:sequence>
+			<xs:element name="name" type="xs:normalizedString"/>
+			<xs:element name="position">	
+				<xs:complexType mixed="false">
+					<xs:choice>
+						<xs:element name="chief"/>
+						<xs:element name="cook"/>
+						<xs:element name="owner"/>
+						<xs:element name="waiter"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="employment-type">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="part-time-worker"/>
+						<xs:element name="full-time-worker"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="employed" type="TEmployed"/>
+	</xs:complexType>
+	<xs:simpleType name="TEmployed">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TList-of-equipment" mixed="true">
+		<xs:sequence>
+			<xs:element name="equipment" minOccurs="1" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="id" type="TEquipmenID" use="required"/>
+							<xs:attribute name="condition" type="TCondition" use="optional"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TEquipmenID">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="[pkb_]{1,4}[a-z0-9]{1,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TCondition">
+		<xs:restriction base="xs:normalizedString">
+			<xs:enumeration value="good"/>
+			<xs:enumeration value="average"/>
+			<xs:enumeration value="bad"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TPizza-corner">
+		<xs:sequence>
+			<xs:element name="warehouses" type="TWarehouses"/>
+			<xs:element name="responsible-person" type="TResponsible-person"/>
+			<xs:element name="list-of-equipment" type="TList-of-equipment"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="warehouse" type="TWarehouse"/>
+	<xs:complexType name="TBar">
+		<xs:sequence>
+			<xs:element name="shifts" type="TShifts"/>
+			<xs:element ref="warehouse"/>
+			<xs:element name="responsible-person" type="TResponsible-person" minOccurs="1" maxOccurs="2"/>
+			<xs:element name="list-of-equipment" type="TList-of-equipment" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TGuest-area" mixed="true">
+		<xs:sequence>
+			<xs:element name="tables" type="TTables"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TTables" mixed="false">
+		<xs:sequence>
+			<xs:element name="table" type="TTable" minOccurs="1" maxOccurs="15"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TTable" mixed="false">
+		<xs:sequence>
+			<xs:element name="capacity" type="xs:short"/>
+			<xs:element name="occupancy" type="xs:short"/>
+		</xs:sequence>
+		<xs:attribute name="tableID" type="TTableID" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="TTableID">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="table[0-9]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

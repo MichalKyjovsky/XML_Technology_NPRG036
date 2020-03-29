@@ -1,0 +1,3 @@
+(:Following query returns status of table07:)
+
+//guest-area/descendant::table[@tableId="table07"]

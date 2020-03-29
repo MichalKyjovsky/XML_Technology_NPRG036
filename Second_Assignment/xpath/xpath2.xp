@@ -1,0 +1,3 @@
+(:ID of the teams where Jean Pierre White works.:)
+
+//shift//name[text()='Jean Pierre White']//ancestor::shift/id
