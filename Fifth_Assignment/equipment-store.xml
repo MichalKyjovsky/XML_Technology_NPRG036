@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data2/html.xsl"?>
+<gastro-store>
+    <kitchen-section>
+        <dishes>
+            <plates id="pl1" onStock="YES">GLADELIG</plates>
+            <plates id="pl2" onStock="YES">STRIMMIG</plates>
+            <plates id="pl3" onStock="YES">OFTAST</plates>
+            <plates id="pl4" onStock="YES">DINERA</plates>
+            <plates id="pl5" onStock="YES">MEDLEM</plates>
+            <bowl id="bwl1" onStock="YES">FÄRGRIK</bowl>
+            <bowl id="bwl2" onStock="YES">VÄRDERA</bowl>
+        </dishes>
+        <cutlery>
+            <knives id="ctl1" onStock="YES">FÖRNUFT</knives>
+            <knives id="ctl2" onStock="YES">SEDLIG</knives>
+            <knives id="ctl3" onStock="YES">KALAS</knives>
+            <forks id="ctl4" onStock="YES">DRAGON</forks>
+            <forks id="ctl5" onStock="YES">MARTORP</forks>
+            <forks id="ctl6" onStock="YES">DUMBLEDOR</forks>
+            <mix id="ctl7" onStock="YES">BUBBLOR</mix>
+            <mix id="ctl8" onStock="YES">OSTRON</mix>
+            <tea-spoons id="ctl10" onStock="YES">MOPSIG</tea-spoons>
+            <spoons id="ctl11" onStock="YES">IDENTITED</spoons>
+            <spoons id="ctl12" onStock="YES">LIVNÄRA</spoons>
+        </cutlery>
+        <cooking>
+            <pot id="ckc1" onStock="YES">KAVALKAD</pot>
+            <pot id="ckc2" onStock="YES">ANNONS</pot>
+            <pan id="ckc3" onStock="YES">OUMBÄRLIG</pan>
+            <pan id="ckc4" onStock="YES">LÄMPLIG</pan>
+            <tray id="ckc5" onStock="YES">KLOCKREN</tray>
+            <tray id="ckc6" onStock="YES">VARDAGEN</tray>
+        </cooking>
+        <electrical-tools>
+           <tool><slow-cooker id="et1">RATIONAL</slow-cooker></tool>
+            <tool><slow-cooker id="et2">COMBI</slow-cooker></tool>
+            <tool><dishwasher id="et3">COMFORT</dishwasher></tool>
+            <tool><combi-oven id="et4">RATIONAL</combi-oven></tool>
+            <tool><freezer id="et5">BOSCH</freezer></tool>
+            <tool><freezer id="et6">GORENJE</freezer></tool>
+            <tool><freezer id="et7">ELECTROLUX</freezer></tool>
+            <tool><fridge id="et8">SAMSUNG</fridge></tool>
+            <tool><fridge id="et9">BOSCH</fridge></tool>
+            <tool><planetary-mixer id="et10">VIKING</planetary-mixer></tool>
+            <tool><grill id="et11">COMBI</grill></tool>
+            <tool><grill id="et12">VIKING</grill></tool>
+            <tool><grill id="et13">BOSCH</grill></tool>
+            <tool><meat-slicer id="et14">VIKING</meat-slicer></tool>
+            <tool><table-top-fryers id="et15">RATIONAL</table-top-fryers></tool>
+            <tool><meat-mincer id="et16">VIKING</meat-mincer></tool>
+            <tool><meat-mincer id="et17">BOSCH</meat-mincer></tool>
+        </electrical-tools>
+    </kitchen-section>
+    <bar-section>
+        <dining>
+            <glass id="dng1" onStock="YES">FREKVENS</glass>
+            <glass id="dng2" onStock="YES">FRAMKALLA</glass>
+            <glass id="dng3" onStock="YES">FÄRGRIK</glass>
+            <mug id="dng4" onStock="YES">VÄRDERA</mug>
+            <mug id="dng5" onStock="YES">BEPRÖVAD</mug>
+        </dining>
+        <bar>
+            <pitcher id="bar1" onStock="YES">MÅTTLIG</pitcher>
+            <carafe id="bar2" onStock="YES">IDEALISK</carafe>
+        </bar>
+    </bar-section>
+</gastro-store>

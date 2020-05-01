@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data2/html.xsl"?>
+<restaurant
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- Following topic has been chosen due to my gastronomy hobby-->
+	<kitchen>
+		<warehouses>
+			<warehouse id="w_A">
+				<name>Warehouse A</name>
+				<responsible-person>
+					<name>Gordon Ramsey</name>
+					<position>
+						<chief/>
+					</position>
+					<shift-reference shiftRef="TeamAlfa"/>
+				</responsible-person>
+				<sanitary-day>
+					Inspection is performed every Sunday's morning.
+				</sanitary-day>
+				<actualization-date>
+					<?php echo Last control was performed on Date("d.m.Y")?>
+				</actualization-date>
+			</warehouse>
+		</warehouses>
+		<shifts>
+			<shift shiftID="TeamAlfa">
+				<id>Team Alfa</id>
+				<employees>
+					<employee employed="yes">
+						<name>Lydia Bastianich</name>
+						<position>
+							<cook/>
+							<author/>
+						</position>
+						<employment-type>
+							<part-time-worker/>
+						</employment-type>
+					</employee>
+					<employee employed="yes">
+						<name>Gordon Ramsey</name>
+						<position>
+							<chief/>
+						</position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+						<book/>
+					</employee>
+						<employee employed="yes">
+							<name>Luca Manfe</name>
+							<position>
+								<chief/>
+							</position>
+							<employment-type>
+								<full-time-worker/>
+							</employment-type>
+					</employee>
+				</employees>
+			</shift>
+					<shift shiftID="TeamBeta">
+						<id>Team Beta</id>
+						<employees>
+							<employee employed="yes">
+								<name>Joe Bastianich</name>
+								<position>
+									<cook/>
+									<author/>
+								</position>
+								<employment-type>
+									<full-time-worker/>
+								</employment-type>
+							</employee>
+							<employee employed="yes">
+								<name>Jamie Oliver</name>
+								<position>
+									<chief/>
+									<author/>
+								</position>
+								<employment-type>
+									<full-time-worker/>
+								</employment-type>
+							</employee>
+							<employee employed="yes">
+								<name>Graham Elliot</name>
+								<position>
+									<chief/>
+									<author/>
+								</position>
+								<employment-type>
+									<part-time-worker/>
+								</employment-type>
+							</employee>
+							<employee employed="yes">
+								<name>Franco Pepe</name>
+								<position>
+									<cook/>
+								</position>
+								<employment-type>
+									<full-time-worker/>
+								</employment-type>
+							</employee>
+						</employees>
+					</shift>
+			</shifts>
+			<list-of-equipment>
+				<equipment id="k_sc1" condition="good">slow-cooker</equipment>
+				<equipment id="k_dw1" condition="bad">dishwasher</equipment>
+				<equipment id="k_co" condition="good">combi-oven</equipment>
+				<equipment id="k_fz" condition="bad">freezer</equipment>
+				<equipment id="k_fr" condition="average">fridge</equipment>
+				<equipment id="k_pm" condition="bad">planetary-mixer</equipment>
+				<equipment id="k_ms" condition="bad">meat-slicer</equipment>
+				<equipment id="k_ttf" condition="good">table-top-fryers</equipment>
+				<equipment id="k_g" condition="good">grill</equipment>
+				<equipment id="k_mm" condition="average">meat-mincer</equipment>
+			</list-of-equipment>
+	</kitchen>
+	
+	<pizza-corner>
+		<warehouses>
+			<warehouse id="w_B">
+				<name>Warehouse B</name>
+				<responsible-person>
+					<name>Gordon Ramsey</name>
+					<position>
+						<chief/>
+						<author/>
+					</position>
+					<shift-reference shiftRef="TeamAlfa"/>
+				</responsible-person>
+				<sanitary-day>Inspection is performed every Wednesday</sanitary-day>
+				<actualization-date><?php echo Last control was performed on Date("d.m.Y")?></actualization-date>
+			</warehouse>
+		</warehouses>
+		<responsible-person>
+			<name>Franco Pepe</name>
+			<position>
+				Current candidate for promotion.
+				<cook/>
+			</position>
+			<shift-reference shiftRef="TeamBeta"></shift-reference>
+		</responsible-person>
+		<list-of-equipment>
+			<equipment id="pp_po" condition="good">Pizza Oven</equipment>
+			<equipment id="pp_t" condition="good">Pizza Table</equipment>
+		</list-of-equipment>
+	</pizza-corner>
+	
+	<bar>
+		<shifts>
+			<shift shiftID="TeamAlfaBar">
+				<id>Team Alfa Bar</id>
+				<employees>
+					<employee employed="yes">
+						<name>Tierry Rouge</name>
+						<position><owner/>
+							<author/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+					<employee employed="yes">
+						<name>Seth Cohen</name>
+						<position><waiter/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+					<employee employed="yes">
+						<name>Marisa Cooper</name>
+						<position><waiter/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+				</employees>
+			</shift>
+			<shift shiftID="TeamBetaBar">
+				<id>Team Beta Bar</id>
+				<employees>
+					<employee employed="yes">
+						<name>Jean Pierre White</name>
+						<position><owner/>
+							<author/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+					<employee employed="yes">
+						<name>Bryan Atwood</name>
+						<position><waiter/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+					<employee employed="yes">
+						<name>Summer Roberts</name>
+						<position><waiter/></position>
+						<employment-type>
+							<full-time-worker/>
+						</employment-type>
+					</employee>
+				</employees>
+			</shift>
+		</shifts>
+		<warehouse id="w_Bar">
+			<name>Warehouse Bar</name>
+			<responsible-person>
+				<name>Seth Cohen</name>
+				<position><waiter/></position>
+				<shift-reference shiftRef="TeamAlfaBar"/>
+			</responsible-person>
+			<responsible-person>
+				<name>Summer Roberts</name>
+				<position><waiter></waiter></position>
+				<shift-reference shiftRef="TeamBetaBar"/>
+			</responsible-person>
+			<sanitary-day>Control is performed every Monday and Thursday morning.</sanitary-day>
+			<actualization-date><?php echo Last control was performed on Date("d.m.Y")?></actualization-date>
+		</warehouse>
+		<responsible-person>
+			<name>Jean Pierre White</name>
+			<position><owner/></position>
+			<shift-reference shiftRef="TeamAlfaBar"/>
+		</responsible-person>
+		<list-of-equipment>
+			<equipment id="b_gls" condition="average">Glasses</equipment>
+			<equipment id="b_f" condition="good">Faucet</equipment>
+		</list-of-equipment>
+	</bar>
+		
+	<guest-area>
+		<tables>
+			<table tableID="table01">
+				<capacity>4</capacity>
+				<occupancy>3</occupancy>
+			</table>
+			<table tableID="table02">
+				<capacity>4</capacity>
+				<occupancy>0</occupancy>
+			</table>
+			<table tableID="table03">
+				<capacity>6</capacity>
+				<occupancy>4</occupancy>
+			</table>
+			<table tableID="table04">
+				<capacity>2</capacity>
+				<occupancy>2</occupancy>
+			</table>
+			<table tableID="table05">
+				<capacity>6</capacity>
+				<occupancy>6</occupancy>
+			</table>
+			<table tableID="table06">
+				<capacity>2</capacity>
+				<occupancy>0</occupancy>
+			</table>
+			<table tableID="table07">
+				<capacity>8</capacity>
+				<occupancy>7</occupancy>
+			</table>
+			<table tableID="table08">
+				<capacity>4</capacity>
+				<occupancy>4</occupancy>
+			</table>
+			<table tableID="table09">
+				<capacity>16</capacity>
+				<occupancy>16</occupancy>
+			</table>
+			<table tableID="table10">
+				<capacity>4</capacity>
+				<occupancy>3</occupancy>
+			</table>
+		</tables>
+		
+		<![CDATA[
+				for table in tables:
+					if table.capacity == table.occupancy:
+						 table.print(<status>FULL</status>)
+					else:
+						 table.writeln(<status>AVAILABLE</status>)
+			]]>
+	</guest-area>
+	
+</restaurant>

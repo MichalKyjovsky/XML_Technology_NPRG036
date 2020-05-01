@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data2/html.xsl"?>
+<bookstore>
+    <book category="cooking">
+        <title lang="en">Baker Street</title>
+        <author>Gordon Ramsey</author>
+        <year>2013</year>
+    </book>
+    <book category="fantasy">
+        <title lang="en">Percy Jackson</title>
+        <author>Rick Riordan</author>
+        <year>2007</year>
+    </book>
+    <book category="cooking">
+        <title lang="en">Everyday French Part One</title>
+        <author>Jean Pierre White</author>
+        <year>2005</year>
+    </book>
+    <book category="cooking">
+        <title lang="en">Everyday French Part Two</title>
+        <author>Jean Pierre White</author>
+        <year>2005</year>
+        <previous-part>Everyday French Part One</previous-part>
+    </book>
+    <book category="cooking">
+        <title lang="en">Italian Cuisine</title>
+        <author>Lydia Bastianich</author>
+        <year>2005</year>
+    </book>
+    <book category="cooking">
+        <title lang="en">Italia-American Cuisine</title>
+        <author>Joe Bastianich</author>
+        <year>2008</year>
+    </book>
+    <book category="cooking">
+        <title lang="en">Pasta del passa</title>
+        <author>Joe Bastianich</author>
+        <year>2009</year>
+    </book>
+    <book category="web">
+        <title lang="en">HTML and CSS</title>
+        <author>John Ducket</author>
+        <year>2016</year>
+    </book>
+    <book category="web">
+        <title lang="en">Javascript and JQuery</title>
+        <author>John Ducket</author>
+        <year>2016</year>
+    </book>
+</bookstore>
